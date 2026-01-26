@@ -1,32 +1,23 @@
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         Logic logic = new Logic();
 
-        System.out.println("Input String:");
+        // Lettura input
+        System.out.println("Input string:");
         String text = scanner.nextLine();
 
-        System.out.println("the Result:");
-        String[] result = logic.tabellar(text);
-        for (String s : result) {
-            char c = s.charAt(0);
-            int ascii = c;
+        // Codifica con Chuck Norris Unary Code
+        String encoded = logic.encode(text);
 
-            String bin = Integer.toBinaryString(ascii);
-
-            while (bin.length() < 7) {
-                bin = "0" + bin;
-            }
-
-            System.out.println(s + " = " + bin);
-        }
-
+        // Output finale
+        System.out.println("The result:");
+        System.out.println(encoded);
     }
 }
-
-
 
 
